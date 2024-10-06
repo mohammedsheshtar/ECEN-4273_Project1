@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buljekwcxppm4"
+path="res://.godot/imported/switch.ogg-cafe92e18b232ef54cc52b4e26112124.oggvorbisstr"
+
+[deps]
+
+source_file="res://Legacy Collection/Assets/Packs/GothicVania-town-files/phaser-code/assets/sounds/switch.ogg"
+dest_files=["res://.godot/imported/switch.ogg-cafe92e18b232ef54cc52b4e26112124.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
