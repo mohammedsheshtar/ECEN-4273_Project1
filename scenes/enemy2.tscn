@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://dl615p1jveg5h"]
+
+[ext_resource type="Script" path="res://scenes/enemy_2.gd" id="1_6qn7r"]
+[ext_resource type="Texture2D" uid="uid://f05rtebo84lv" path="res://Legacy Collection/Assets/Characters/Hell-Hound-Files/Spritesheets/hell-hound-idle.png" id="1_qo030"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwev1"]
+atlas = ExtResource("1_qo030")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy8yb"]
+atlas = ExtResource("1_qo030")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgwfy"]
+atlas = ExtResource("1_qo030")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mtg4"]
+atlas = ExtResource("1_qo030")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj6yw"]
+atlas = ExtResource("1_qo030")
+region = Rect2(256, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j68fw"]
+atlas = ExtResource("1_qo030")
+region = Rect2(320, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ip1s"]
+atlas = ExtResource("1_qo030")
+region = Rect2(384, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8d8v"]
+atlas = ExtResource("1_qo030")
+region = Rect2(448, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alalr"]
+atlas = ExtResource("1_qo030")
+region = Rect2(512, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kixpx"]
+atlas = ExtResource("1_qo030")
+region = Rect2(576, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byaop"]
+atlas = ExtResource("1_qo030")
+region = Rect2(640, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5mgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwev1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy8yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgwfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mtg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj6yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j68fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ip1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8d8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alalr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kixpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byaop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xltcu"]
+radius = 13.0
+height = 40.0
+
+[node name="enemy2" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_6qn7r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_m5mgr")
+frame_progress = 0.667237
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xltcu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

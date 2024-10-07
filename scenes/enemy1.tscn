@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceos3lx1hm6b3"]
+
+[ext_resource type="Script" path="res://scenes/enemy_1.gd" id="1_12saq"]
+[ext_resource type="Texture2D" uid="uid://c1qpqq5xul364" path="res://Legacy Collection/Assets/Characters/Ghost-Files/Spritesheets/ghost-Idle.png" id="2_60qhd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mexas"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(0, 6, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpjqq"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(64, 6, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0bdo"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(128, 6, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ec0"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(192, 6, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irwwv"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(256, 6, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkogm"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(320, 6, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmex6"]
+atlas = ExtResource("2_60qhd")
+region = Rect2(384, 6, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_604qi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mexas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpjqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0bdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ec0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irwwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkogm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmex6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m7dbm"]
+radius = 8.0
+height = 26.0
+
+[node name="enemy" type="Area2D"]
+position = Vector2(-1, -11)
+scale = Vector2(1.4, 1.4)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_12saq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3.57143)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_604qi")
+frame_progress = 0.439878
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.714287, -0.714286)
+shape = SubResource("CapsuleShape2D_m7dbm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
