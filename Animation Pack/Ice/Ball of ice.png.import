@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y3ftjj1qyty5"
-path="res://.godot/imported/PREVIEW-gothic-horror.png-95c4caa8f1ddb3a0daa3285a4667f16b.ctex"
+uid="uid://ska4kxq24ad6"
+path="res://.godot/imported/Ball of ice.png-7829f28c23051eb9893dffba3c9f88c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gothic-Horror-Files/PNG/PREVIEW-gothic-horror.png"
-dest_files=["res://.godot/imported/PREVIEW-gothic-horror.png-95c4caa8f1ddb3a0daa3285a4667f16b.ctex"]
+source_file="res://Animation Pack/Ice/Ball of ice.png"
+dest_files=["res://.godot/imported/Ball of ice.png-7829f28c23051eb9893dffba3c9f88c9.ctex"]
 
 [params]
 

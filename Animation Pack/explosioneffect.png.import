@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2mu8tnc3rdcl"
-path="res://.godot/imported/clouds.png-af8ed9638ef0deeeaf2131d53d5cfac3.ctex"
+uid="uid://bj8ko4jtaovx1"
+path="res://.godot/imported/explosioneffect.png-9e269c8190caff4b13a987b89249d723.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gothic-Horror-Files/PNG/layers/clouds.png"
-dest_files=["res://.godot/imported/clouds.png-af8ed9638ef0deeeaf2131d53d5cfac3.ctex"]
+source_file="res://Animation Pack/explosioneffect.png"
+dest_files=["res://.godot/imported/explosioneffect.png-9e269c8190caff4b13a987b89249d723.ctex"]
 
 [params]
 

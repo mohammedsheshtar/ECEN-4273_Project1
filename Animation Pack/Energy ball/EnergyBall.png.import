@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://531s4w6tawli"
-path="res://.godot/imported/tiles.png-264c24ce03ecf86a15cb864f78390151.ctex"
+uid="uid://surm0yf25o5f"
+path="res://.godot/imported/EnergyBall.png-35e17cca6a5169d4b9c5168fbcaafad1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gothic-Horror-Files/PNG/layers/tiles.png"
-dest_files=["res://.godot/imported/tiles.png-264c24ce03ecf86a15cb864f78390151.ctex"]
+source_file="res://Animation Pack/Energy ball/EnergyBall.png"
+dest_files=["res://.godot/imported/EnergyBall.png-35e17cca6a5169d4b9c5168fbcaafad1.ctex"]
 
 [params]
 

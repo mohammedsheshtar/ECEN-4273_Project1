@@ -1,9 +1,28 @@
-[gd_scene format=3 uid="uid://dqh3upbq4gsgc"]
+[gd_scene load_steps=4 format=3 uid="uid://dqh3upbq4gsgc"]
+
+[ext_resource type="PackedScene" uid="uid://ca7l4lkcrg7yc" path="res://scenes/level.tscn" id="1_fht4q"]
+[ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="1_j18se"]
+[ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_vdygy"]
 
 [node name="game" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 664.0
+color = Color(4.81308e-08, 0.221994, 0.224295, 1)
+
+[node name="Clouds" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+position = Vector2(575.5, 332)
+scale = Vector2(4.50391, 3.77273)
+texture = ExtResource("1_j18se")
+
+[node name="Town" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+position = Vector2(575, 332)
+scale = Vector2(4.5, 3.77273)
+texture = ExtResource("2_vdygy")
+
+[node name="level" parent="." instance=ExtResource("1_fht4q")]
