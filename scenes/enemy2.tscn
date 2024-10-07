@@ -1,7 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl615p1jveg5h"]
+[gd_scene load_steps=18 format=3 uid="uid://dl615p1jveg5h"]
 
 [ext_resource type="Script" path="res://scenes/enemy_2.gd" id="1_6qn7r"]
 [ext_resource type="Texture2D" uid="uid://f05rtebo84lv" path="res://Legacy Collection/Assets/Characters/Hell-Hound-Files/Spritesheets/hell-hound-idle.png" id="1_qo030"]
+[ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_jiq3p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bcbyi"]
+shader = ExtResource("2_jiq3p")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/amount = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwev1"]
 atlas = ExtResource("1_qo030")
@@ -98,9 +104,10 @@ collision_mask = 10
 script = ExtResource("1_6qn7r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_bcbyi")
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_m5mgr")
-frame_progress = 0.667237
+frame_progress = 0.162338
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)

@@ -5,6 +5,8 @@ var facing_right := true
 @export var speed = 150
 var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
+var health := 100
+
 func _process(delta):
 	get_input()
 	apply_gravity()
@@ -48,3 +50,6 @@ func get_animation():
 
 func _on_cooldown_timer_timeout() -> void:
 	can_shoot = true
+
+func get_damage(amount):
+	print('layl was damaged')

@@ -1,7 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://cixeh0x5egmvm"]
+[gd_scene load_steps=25 format=3 uid="uid://cixeh0x5egmvm"]
 
 [ext_resource type="Texture2D" uid="uid://dp756ae4bc7a7" path="res://oak_woods_v1.0/character/AnimationSheet_Character.png" id="1_jikxl"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_twugs"]
+[ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_1ms7y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqmuf"]
+shader = ExtResource("2_1ms7y")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/amount = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_772rw"]
 atlas = ExtResource("1_jikxl")
@@ -156,6 +162,7 @@ collision_mask = 13
 script = ExtResource("1_twugs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_aqmuf")
 sprite_frames = SubResource("SpriteFrames_5udme")
 animation = &"idle"
 autoplay = "idle"

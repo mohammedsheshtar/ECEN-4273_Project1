@@ -1,7 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceos3lx1hm6b3"]
+[gd_scene load_steps=14 format=3 uid="uid://ceos3lx1hm6b3"]
 
 [ext_resource type="Script" path="res://scenes/enemy_1.gd" id="1_12saq"]
 [ext_resource type="Texture2D" uid="uid://c1qpqq5xul364" path="res://Legacy Collection/Assets/Characters/Ghost-Files/Spritesheets/ghost-Idle.png" id="2_60qhd"]
+[ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_aed6f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sqecc"]
+shader = ExtResource("2_aed6f")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/amount = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mexas"]
 atlas = ExtResource("2_60qhd")
@@ -72,6 +78,7 @@ collision_mask = 11
 script = ExtResource("1_12saq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_sqecc")
 position = Vector2(0, -3.57143)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_604qi")
@@ -82,3 +89,4 @@ position = Vector2(0.714287, -0.714286)
 shape = SubResource("CapsuleShape2D_m7dbm")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
