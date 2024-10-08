@@ -6,6 +6,7 @@ var facing_right := true
 var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
 var health := 100
+var vulnerable := true
 
 func _process(delta):
 	get_input()
@@ -52,4 +53,17 @@ func _on_cooldown_timer_timeout() -> void:
 	can_shoot = true
 
 func get_damage(amount):
-	print('layl was damaged')
+	if vulnerable:
+		health -= amount
+		print('layl was damaged')
+		print(health)
+		var tween = create_tween()
+		tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 1.0, 0.0)
+		tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.2)
+		vulnerable = false
+		$timers/invincibility.start() 
+
+
+func _on_invincibility_timeout() -> void:
+	vulnerable = true
+	

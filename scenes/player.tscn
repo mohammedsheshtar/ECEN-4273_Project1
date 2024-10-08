@@ -1,8 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://cixeh0x5egmvm"]
+[gd_scene load_steps=26 format=3 uid="uid://cixeh0x5egmvm"]
 
 [ext_resource type="Texture2D" uid="uid://dp756ae4bc7a7" path="res://oak_woods_v1.0/character/AnimationSheet_Character.png" id="1_jikxl"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_twugs"]
 [ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_1ms7y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2qeu4"]
+shader = ExtResource("2_1ms7y")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/amount = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqmuf"]
 shader = ExtResource("2_1ms7y")
@@ -157,6 +162,7 @@ animations = [{
 radius = 7.0
 
 [node name="player" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_2qeu4")
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_twugs")
@@ -184,6 +190,10 @@ shape = SubResource("CapsuleShape2D_8pwxo")
 wait_time = 0.6
 one_shot = true
 
+[node name="invincibility" type="Timer" parent="timers"]
+wait_time = 0.6
+one_shot = true
+
 [node name="fire" type="Node2D" parent="."]
 
 [node name="fireLeft" type="Sprite2D" parent="fire"]
@@ -191,3 +201,4 @@ one_shot = true
 [node name="fireRight" type="Sprite2D" parent="fire"]
 
 [connection signal="timeout" from="timers/cooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="timers/invincibility" to="." method="_on_invincibility_timeout"]
