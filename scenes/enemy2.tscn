@@ -107,11 +107,12 @@ script = ExtResource("1_6qn7r")
 material = SubResource("ShaderMaterial_bcbyi")
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_m5mgr")
-frame_progress = 0.162338
+frame_progress = 0.221703
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-3, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xltcu")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

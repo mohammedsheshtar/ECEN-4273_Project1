@@ -1,6 +1,7 @@
 extends Area2D
 
 var health := 3
+var animation := ''
 
 func _on_area_entered(area: Area2D) -> void:
 	health -= 1
@@ -18,6 +19,9 @@ func _process(delta):
 func check_death():
 	if health <= 0:
 		queue_free()
+
+func get_animation():
+	pass
 
 
 func _on_body_entered(body):
