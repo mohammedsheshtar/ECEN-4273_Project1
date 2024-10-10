@@ -31,7 +31,7 @@ func get_input():
 
 
 func apply_gravity():
-	velocity.y += 4.2
+	velocity.y += 4.5
 	
 func get_facing_direction():
 	if direction_x != 0:

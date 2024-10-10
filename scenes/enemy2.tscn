@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dl615p1jveg5h"]
+[gd_scene load_steps=21 format=3 uid="uid://dl615p1jveg5h"]
 
 [ext_resource type="Script" path="res://scenes/enemy_2.gd" id="1_6qn7r"]
 [ext_resource type="Texture2D" uid="uid://f05rtebo84lv" path="res://Legacy Collection/Assets/Characters/Hell-Hound-Files/Spritesheets/hell-hound-idle.png" id="1_qo030"]
@@ -96,7 +96,16 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xltcu"]
 radius = 13.0
-height = 40.0
+height = 38.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hk5wf"]
+size = Vector2(34, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eabxc"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2c3"]
+size = Vector2(3, 3)
 
 [node name="enemy2" type="Area2D"]
 collision_layer = 4
@@ -107,6 +116,7 @@ script = ExtResource("1_6qn7r")
 material = SubResource("ShaderMaterial_bcbyi")
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_m5mgr")
+autoplay = "default"
 frame_progress = 0.221703
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -114,5 +124,26 @@ position = Vector2(-3, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xltcu")
 
+[node name="borderArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borderArea"]
+position = Vector2(-3, 1)
+shape = SubResource("RectangleShape2D_hk5wf")
+
+[node name="rightCliff" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightCliff"]
+position = Vector2(10.5, 12.5)
+shape = SubResource("RectangleShape2D_eabxc")
+
+[node name="leftCliff" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftCliff"]
+position = Vector2(-12.5, 12.5)
+shape = SubResource("RectangleShape2D_6b2c3")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="borderArea" to="." method="_on_border_area_body_entered"]
+[connection signal="body_exited" from="rightCliff" to="." method="_on_right_cliff_body_exited"]
+[connection signal="body_exited" from="leftCliff" to="." method="_on_left_cliff_body_exited"]
