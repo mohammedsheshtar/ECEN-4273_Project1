@@ -13,6 +13,7 @@ func _process(delta):
 	apply_gravity()
 	get_facing_direction()
 	get_animation()
+	check_death()
 	
 	velocity.x = direction_x * speed 
 	move_and_slide()
@@ -31,7 +32,7 @@ func get_input():
 
 
 func apply_gravity():
-	velocity.y += 4.5
+	velocity.y += 19
 	
 func get_facing_direction():
 	if direction_x != 0:
@@ -66,4 +67,7 @@ func get_damage(amount):
 
 func _on_invincibility_timeout() -> void:
 	vulnerable = true
-	
+
+func check_death():
+	if health <= 0:
+		get_tree().quit()

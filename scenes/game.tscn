@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqh3upbq4gsgc"]
+[gd_scene load_steps=5 format=3 uid="uid://dqh3upbq4gsgc"]
 
 [ext_resource type="PackedScene" uid="uid://ca7l4lkcrg7yc" path="res://scenes/level.tscn" id="1_fht4q"]
 [ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="1_j18se"]
 [ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_vdygy"]
+[ext_resource type="PackedScene" uid="uid://be1gu4abh5f68" path="res://scenes/ui.tscn" id="3_w0wma"]
 
 [node name="game" type="Node"]
 
@@ -24,5 +25,7 @@ texture = ExtResource("1_j18se")
 position = Vector2(575, 324)
 scale = Vector2(4.5, 3.68182)
 texture = ExtResource("2_vdygy")
+
+[node name="UI" parent="." instance=ExtResource("3_w0wma")]
 
 [node name="level" parent="." instance=ExtResource("1_fht4q")]
