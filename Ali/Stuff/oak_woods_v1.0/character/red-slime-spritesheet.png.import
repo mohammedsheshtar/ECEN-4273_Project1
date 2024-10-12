@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c86yk23d7issa"
-path="res://.godot/imported/shop.png-1baf21af94046c70e7954d3e4eb6c2c7.ctex"
+uid="uid://oylu4x53o8hf"
+path="res://.godot/imported/red-slime-spritesheet.png-55231344cc727fcdd8f5adc17669cef4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oak_woods_v1.0/decorations/shop.png"
-dest_files=["res://.godot/imported/shop.png-1baf21af94046c70e7954d3e4eb6c2c7.ctex"]
+source_file="res://Stuff/oak_woods_v1.0/character/red-slime-spritesheet.png"
+dest_files=["res://.godot/imported/red-slime-spritesheet.png-55231344cc727fcdd8f5adc17669cef4.ctex"]
 
 [params]
 

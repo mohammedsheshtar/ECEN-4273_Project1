@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds8phgycnkjx5"
-path="res://.godot/imported/grass_1.png-76e50a029f84ab9fcb35f4adb5cbad44.ctex"
+uid="uid://rg0igcsykhev"
+path="res://.godot/imported/rock_2.png-3249c827775327041462d5769fe749d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oak_woods_v1.0/decorations/grass_1.png"
-dest_files=["res://.godot/imported/grass_1.png-76e50a029f84ab9fcb35f4adb5cbad44.ctex"]
+source_file="res://Stuff/oak_woods_v1.0/decorations/rock_2.png"
+dest_files=["res://.godot/imported/rock_2.png-3249c827775327041462d5769fe749d8.ctex"]
 
 [params]
 
