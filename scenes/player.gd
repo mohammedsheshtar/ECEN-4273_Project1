@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var direction_x := 0.0
 var facing_right := true
-@export var speed = 150
+@export var speed = 500
 var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
 var health := 100
@@ -13,9 +13,8 @@ func _process(delta):
 	apply_gravity()
 	get_facing_direction()
 	get_animation()
-	check_death()
 	
-	velocity.x = direction_x * speed 
+	velocity.x = direction_x * 130
 	move_and_slide()
 	
 func get_input():
@@ -32,7 +31,7 @@ func get_input():
 
 
 func apply_gravity():
-	velocity.y += 19
+	velocity.y += 4
 	
 func get_facing_direction():
 	if direction_x != 0:
@@ -67,7 +66,4 @@ func get_damage(amount):
 
 func _on_invincibility_timeout() -> void:
 	vulnerable = true
-
-func check_death():
-	if health <= 0:
-		get_tree().quit()
+	

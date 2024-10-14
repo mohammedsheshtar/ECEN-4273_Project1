@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://cixeh0x5egmvm"]
 
-[ext_resource type="Texture2D" uid="uid://dp756ae4bc7a7" path="res://oak_woods_v1.0/character/AnimationSheet_Character.png" id="1_jikxl"]
+[ext_resource type="Texture2D" uid="uid://dp756ae4bc7a7" path="res://Stuff/oak_woods_v1.0/character/AnimationSheet_Character.png" id="1_jikxl"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_twugs"]
 [ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_1ms7y"]
 
@@ -175,10 +175,9 @@ autoplay = "idle"
 frame = 1
 frame_progress = 0.0463608
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+limit_bottom = 600
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 

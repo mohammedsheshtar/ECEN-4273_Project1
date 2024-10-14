@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://v62t0swrewse"]
+
+[ext_resource type="Texture2D" uid="uid://dangw0ck0pb1x" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/tiles.png" id="1_pn8is"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtrxt"]
+size = Vector2(48, 15)
+
+[node name="Platform1" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Tiles" type="Sprite2D" parent="."]
+texture = ExtResource("1_pn8is")
+region_enabled = true
+region_rect = Rect2(383.752, 96.0763, 48.4554, 16.7979)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_xtrxt")
