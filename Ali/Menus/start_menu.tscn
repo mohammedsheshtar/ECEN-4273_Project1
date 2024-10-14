@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4j2rca0truw5"]
+
+[ext_resource type="Script" path="res://Menus/start_menu.gd" id="1_43s8s"]
+[ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_es553"]
+[ext_resource type="Theme" uid="uid://y4opfstsotdt" path="res://Menus/Start_theme.tres" id="2_vuump"]
+[ext_resource type="FontFile" uid="uid://b1gu7m2vsucpk" path="res://Menus/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="3_u7inv"]
+[ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="3_yi5qr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4ykq"]
+texture = ExtResource("2_es553")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1toux"]
+texture = ExtResource("3_yi5qr")
+
+[node name="Start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43s8s")
+
+[node name="Town" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p4ykq")
+
+[node name="Clouds" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1toux")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -89.0
+offset_right = 94.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_vuump")
+text = "Play"
+autowrap_mode = 1
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_vuump")
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_vuump")
+text = "Quit"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.089
+anchor_right = 0.5
+anchor_bottom = 0.089
+offset_left = -355.0
+offset_top = 10.92
+offset_right = 365.0
+offset_bottom = 145.92
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7inv")
+theme_override_font_sizes/font_size = 120
+text = "Path of Light"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
