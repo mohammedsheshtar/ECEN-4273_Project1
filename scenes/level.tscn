@@ -1917,6 +1917,22 @@ sources/0 = SubResource("TileSetAtlasSource_lwyxw")
 sources/2 = SubResource("TileSetAtlasSource_onbd1")
 sources/1 = SubResource("TileSetAtlasSource_o561d")
 
+[sub_resource type="Animation" id="Animation_rrgdp"]
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(393, 297), Vector2(486, 297)]
+}
+
 [sub_resource type="Animation" id="Animation_846gs"]
 resource_name = "movv"
 length = 3.0
@@ -1932,22 +1948,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(393, 297), Vector2(484, 297)]
-}
-
-[sub_resource type="Animation" id="Animation_rrgdp"]
-length = 3.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(393, 297), Vector2(486, 297)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qpch5"]
