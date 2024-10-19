@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var direction_x := 0.0
 var facing_right := true
-@export var speed = 150
+@export var speed := 150
 var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
 var health := 100
@@ -14,7 +14,7 @@ func _process(delta):
 	get_facing_direction()
 	get_animation()
 	
-	velocity.x = direction_x * speed 
+	velocity.x = direction_x * 150 
 	move_and_slide()
 	
 func get_input():
@@ -31,7 +31,7 @@ func get_input():
 
 
 func apply_gravity():
-	velocity.y += 4.5
+	velocity.y += 3
 	
 func get_facing_direction():
 	if direction_x != 0:

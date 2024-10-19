@@ -12,17 +12,17 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = 1.0
 offset_right = 1916.0
-offset_bottom = 1093.0
+offset_bottom = 1076.0
 color = Color(4.81308e-08, 0.221994, 0.224295, 1)
 
 [node name="Clouds" type="Sprite2D" parent="CanvasLayer/ColorRect"]
-position = Vector2(965.5, 549)
-scale = Vector2(7.55078, 6.23864)
+position = Vector2(959, 540)
+scale = Vector2(7.5, 6.13636)
 texture = ExtResource("1_j18se")
 
 [node name="Town" type="Sprite2D" parent="CanvasLayer/ColorRect"]
-position = Vector2(957, 538)
-scale = Vector2(7.48438, 6.11364)
+position = Vector2(959, 540)
+scale = Vector2(7.5, 6.13637)
 texture = ExtResource("2_vdygy")
 
 [node name="level" parent="." instance=ExtResource("1_fht4q")]
