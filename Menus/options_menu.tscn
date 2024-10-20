@@ -55,6 +55,8 @@ text = "Volume"
 
 [node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+min_value = -30.0
+max_value = 0.0
 
 [node name="Mute_label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

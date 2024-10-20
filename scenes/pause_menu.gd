@@ -1,4 +1,8 @@
 extends CanvasLayer
+
+var master_bus = AudioServer.get_bus_index('Master')
+
+
 func _ready() -> void:
 	self.hide()
 
@@ -14,7 +18,11 @@ func _on_back_pressed() -> void:
 
 
 func _on_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(-40,40)
+	AudioServer.set_bus_volume_db(master_bus,value)
+	if value == -30:
+		AudioServer.set_bus_mute(master_bus, true)
+	else:
+		AudioServer.set_bus_mute(master_bus, false)
 
 
 

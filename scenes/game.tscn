@@ -104,6 +104,8 @@ text = "Volume"
 [node name="Volume" type="HSlider" parent="pauseMenu/MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
+min_value = -30.0
+max_value = 0.0
 
 [node name="Mute_label" type="Label" parent="pauseMenu/MarginContainer/VBoxContainer"]
 process_mode = 3
@@ -163,5 +165,5 @@ text = " Quit "
 [connection signal="toggled" from="pauseMenu/MarginContainer/VBoxContainer/Mute" to="pauseMenu" method="_on_mute_toggled"]
 [connection signal="item_selected" from="pauseMenu/MarginContainer/VBoxContainer/Resolutions" to="pauseMenu" method="_on_resolutions_item_selected"]
 [connection signal="item_selected" from="pauseMenu/MarginContainer/VBoxContainer/Display_mode" to="pauseMenu" method="_on_display_mode_item_selected"]
-[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_quit_pressed"]
 [connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_quit_pressed"]
