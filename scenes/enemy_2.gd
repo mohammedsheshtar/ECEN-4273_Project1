@@ -4,7 +4,7 @@ extends Area2D
 var health := 4
 var direction_x := 1
 @export var speed := 50
-
+@onready var player = get_tree().get_first_node_in_group('player')
 func _on_area_entered(area: Area2D) -> void:
 	health -= 1
 	print('doggo was hit')
@@ -19,9 +19,25 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _process(delta):
 	check_death()
+	get_animation()
+	adjust_speed()
 	position.x += speed * -direction_x * delta
-
-
+func adjust_speed():
+	if player:
+		var distance_to_player = position.distance_to(player.position)
+		if distance_to_player <= 130:
+			speed = 100
+		else:
+			speed = 50
+func get_animation():
+	var animation = 'idle'
+	if speed == 50:
+		animation = 'idle'
+	elif speed == 100:
+		animation = 'run'
+	else:
+		animation = 'idle'
+	$AnimatedSprite2D.animation = animation
 func check_death():
 	if health <= 0:
 		await get_tree().create_timer(2).timeout

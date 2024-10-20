@@ -9,13 +9,14 @@ var health := 100
 var vulnerable := true
 
 func _ready() -> void:
-	health = 100
+	pass
 
 func _process(delta):
 	get_input()
-	apply_gravity()
+	apply_gravity(delta)
 	get_facing_direction()
 	get_animation()
+	check_health()
 	
 	velocity.x = direction_x * 150 
 	move_and_slide()
@@ -33,8 +34,8 @@ func get_input():
 	
 
 
-func apply_gravity():
-	velocity.y += 3
+func apply_gravity(delta):
+	velocity.y += 400 * delta
 	
 func get_facing_direction():
 	if direction_x != 0:
@@ -69,4 +70,11 @@ func get_damage(amount):
 
 func _on_invincibility_timeout() -> void:
 	vulnerable = true
-	
+
+func check_health():
+	if health <= 0:
+		die()
+
+func die():
+	print("Player has died")
+	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
