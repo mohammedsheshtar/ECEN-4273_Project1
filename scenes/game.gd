@@ -1,7 +1,7 @@
 extends Node
 
 var current_form := 0  # 0: Morning, 1: Afternoon, 2: Night
-var form_durations := [60, 60, 60]  # Duration for each form in seconds
+var form_durations := [30, 30, 30]  # Duration for each form in seconds
 var elapsed_time := 0
 
 # Background nodes (as Sprite2D)

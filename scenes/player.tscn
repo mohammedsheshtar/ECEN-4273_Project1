@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://cixeh0x5egmvm"]
+[gd_scene load_steps=35 format=3 uid="uid://cixeh0x5egmvm"]
 
 [ext_resource type="Texture2D" uid="uid://dp756ae4bc7a7" path="res://Stuff/oak_woods_v1.0/character/AnimationSheet_Character.png" id="1_jikxl"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_twugs"]
 [ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_1ms7y"]
+[ext_resource type="Texture2D" uid="uid://d4kfdpwlr8y5x" path="res://assets/AnimationSheet_Character.png" id="3_e84hi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2qeu4"]
 shader = ExtResource("2_1ms7y")
@@ -13,6 +14,38 @@ shader_parameter/amount = 0.0
 shader = ExtResource("2_1ms7y")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/amount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnfbk"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nwy1"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxuof"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulpsi"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkc15"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuhhq"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwsf7"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86xrh"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(224, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_772rw"]
 atlas = ExtResource("1_jikxl")
@@ -88,6 +121,35 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5udme"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnfbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nwy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxuof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulpsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkc15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuhhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwsf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86xrh")
+}],
+"loop": true,
+"name": &"death",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_772rw")
@@ -170,10 +232,9 @@ script = ExtResource("1_twugs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_aqmuf")
 sprite_frames = SubResource("SpriteFrames_5udme")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.0463608
+frame_progress = 0.483415
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)

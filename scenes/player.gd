@@ -7,12 +7,18 @@ var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
 var health := 100
 var vulnerable := true
-
+var animation = ''
+var death = false
+@onready var kill_zone = get_tree().get_first_node_in_group('Kill zone')
+var alive := true
 func _ready() -> void:
 	pass
 
 func _process(delta):
-	get_input()
+	if death == false:
+		get_input()
+	else:
+		animation = 'death'
 	apply_gravity(delta)
 	get_facing_direction()
 	get_animation()
@@ -22,13 +28,16 @@ func _process(delta):
 	move_and_slide()
 	
 func get_input():
-	direction_x = Input.get_axis("left","right")
+	if alive == false:
+		return
 	
+	direction_x = Input.get_axis("left","right")
+		
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		shoot.emit(global_position, facing_right)
 		can_shoot = false
 		$timers/cooldownTimer.start()
-	
+		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -150
 	
@@ -42,12 +51,14 @@ func get_facing_direction():
 		facing_right = direction_x >= 0
 
 func get_animation():
-	var animation = 'idle'
+	animation = 'idle'
 	var shot_ani = ''
 	if not is_on_floor():
 		animation = 'jump'
 	elif direction_x != 0:
 		animation = 'walk'
+	elif death:
+		animation = 'death'
 	$AnimatedSprite2D.animation = animation
 	$AnimatedSprite2D.flip_h = not facing_right
 		
@@ -76,5 +87,13 @@ func check_health():
 		die()
 
 func die():
+	alive = false
 	print("Player has died")
+	set_animation_to_death()
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
+func set_animation_to_death():
+	animation = 'death'
+	death = true
+func set_health_zero():
+	health = 0
+	alive = false
