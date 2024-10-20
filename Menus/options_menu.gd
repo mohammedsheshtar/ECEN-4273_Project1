@@ -12,7 +12,8 @@ func _on_volume_value_changed(value: float) -> void:
 
 
 func _on_mute_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	var master_bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(master_bus_index, !AudioServer.is_bus_mute(master_bus_index))
 	
 func _on_display_mode_item_selected(index: int) -> void:
 	match index:

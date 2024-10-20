@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 func _ready() -> void:
 	self.hide()
 
@@ -15,12 +14,13 @@ func _on_back_pressed() -> void:
 
 
 func _on_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(0,100)
+	AudioServer.set_bus_volume_db(-40,40)
 
 
 
 func _on_mute_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	var master_bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(master_bus_index, !AudioServer.is_bus_mute(master_bus_index))
 	
 func _on_display_mode_item_selected(index: int) -> void:
 	match index:
