@@ -5,7 +5,7 @@ var facing_right := true
 @export var speed := 150
 var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
-var health := 100
+var health := 10
 var vulnerable := true
 var animation = ''
 var death = false
@@ -90,7 +90,12 @@ func die():
 	alive = false
 	print("Player has died")
 	set_animation_to_death()
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
+
+
+
+	#get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
 func set_animation_to_death():
 	animation = 'death'
 	death = true
