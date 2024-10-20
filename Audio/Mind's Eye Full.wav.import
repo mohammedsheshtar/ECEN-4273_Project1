@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8rlr1ccx5r4s"
+path="res://.godot/imported/Mind's Eye Full.wav-8276b8c9e003559bc8bea3c6f8c7fe90.sample"
+
+[deps]
+
+source_file="res://Audio/Mind's Eye Full.wav"
+dest_files=["res://.godot/imported/Mind's Eye Full.wav-8276b8c9e003559bc8bea3c6f8c7fe90.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

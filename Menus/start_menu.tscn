@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4j2rca0truw5"]
+[gd_scene load_steps=9 format=3 uid="uid://b4j2rca0truw5"]
 
 [ext_resource type="Script" path="res://Menus/start_menu.gd" id="1_43s8s"]
 [ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_es553"]
 [ext_resource type="Theme" uid="uid://y4opfstsotdt" path="res://Menus/Start_theme.tres" id="2_vuump"]
 [ext_resource type="FontFile" uid="uid://b1gu7m2vsucpk" path="res://Menus/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="3_u7inv"]
 [ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="3_yi5qr"]
+[ext_resource type="AudioStream" uid="uid://bfoqc7m65i6lc" path="res://Audio/2 Fredelig Sinn Loop 2.wav" id="6_2w2vo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4ykq"]
 texture = ExtResource("2_es553")
@@ -89,6 +90,10 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_u7inv")
 theme_override_font_sizes/font_size = 120
 text = "Path of Light"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2w2vo")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

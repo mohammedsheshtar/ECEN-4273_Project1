@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqh3upbq4gsgc"]
+[gd_scene load_steps=8 format=3 uid="uid://dqh3upbq4gsgc"]
 
 [ext_resource type="PackedScene" uid="uid://ca7l4lkcrg7yc" path="res://scenes/level.tscn" id="1_fht4q"]
 [ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="1_j18se"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_j33l5"]
 [ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_vdygy"]
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="5_dewhb"]
+[ext_resource type="PackedScene" uid="uid://b6i1ouyfu6a5x" path="res://Audio/background_music.tscn" id="6_ltwqx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0f37d"]
 
@@ -106,6 +107,8 @@ offset_top = 624.0
 offset_right = 1061.0
 offset_bottom = 704.0
 text = "back to main menu"
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_ltwqx")]
 
 [connection signal="pressed" from="gameOver/retry" to="gameOver" method="_on_retry_pressed"]
 [connection signal="pressed" from="gameOver/quit_to_main" to="gameOver" method="_on_quit_to_main_pressed"]

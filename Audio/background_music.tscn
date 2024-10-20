@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6i1ouyfu6a5x"]
+
+[ext_resource type="AudioStream" uid="uid://c8rlr1ccx5r4s" path="res://Audio/Mind's Eye Full.wav" id="1_sk713"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_sk713")
+autoplay = true
