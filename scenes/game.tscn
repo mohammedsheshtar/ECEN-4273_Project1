@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqh3upbq4gsgc"]
+[gd_scene load_steps=9 format=3 uid="uid://dqh3upbq4gsgc"]
 
 [ext_resource type="PackedScene" uid="uid://ca7l4lkcrg7yc" path="res://scenes/level.tscn" id="1_fht4q"]
 [ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="1_j18se"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_j33l5"]
 [ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_vdygy"]
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="5_dewhb"]
 [ext_resource type="PackedScene" uid="uid://b6i1ouyfu6a5x" path="res://Audio/background_music.tscn" id="6_ltwqx"]
+[ext_resource type="Theme" uid="uid://y4opfstsotdt" path="res://Menus/Start_theme.tres" id="7_tjkhc"]
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="7_uh76v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0f37d"]
 
@@ -64,51 +65,103 @@ texture = ExtResource("2_vdygy")
 
 [node name="level" parent="." instance=ExtResource("1_fht4q")]
 
-[node name="gameOver" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("5_dewhb")
-
-[node name="Panel" type="Panel" parent="gameOver"]
-anchors_preset = -1
-anchor_left = 0.504
-anchor_top = 0.252
-anchor_right = 0.504
-anchor_bottom = 0.252
-offset_left = -550.68
-offset_top = -32.16
-offset_right = 529.32
-offset_bottom = 495.84
-
-[node name="Label" type="Label" parent="gameOver"]
-offset_left = 776.0
-offset_top = 344.0
-offset_right = 1184.0
-offset_bottom = 420.0
-theme_override_font_sizes/font_size = 60
-text = "GAME OVER!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="retry" type="Button" parent="gameOver"]
-anchors_preset = -1
-anchor_left = 0.508
-anchor_top = 0.444
-anchor_right = 0.508
-anchor_bottom = 0.444
-offset_left = -63.36
-offset_top = 16.4799
-offset_right = 72.64
-offset_bottom = 88.4799
-text = "Retry"
-
-[node name="quit_to_main" type="Button" parent="gameOver"]
-offset_left = 904.0
-offset_top = 624.0
-offset_right = 1061.0
-offset_bottom = 704.0
-text = "back to main menu"
-
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_ltwqx")]
 
-[connection signal="pressed" from="gameOver/retry" to="gameOver" method="_on_retry_pressed"]
-[connection signal="pressed" from="gameOver/quit_to_main" to="gameOver" method="_on_quit_to_main_pressed"]
+[node name="pauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("7_uh76v")
+
+[node name="MarginContainer" type="MarginContainer" parent="pauseMenu"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pauseMenu/MarginContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("7_tjkhc")
+text = "Back"
+
+[node name="Vol_Label" type="Label" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = ExtResource("7_tjkhc")
+theme_type_variation = &"HeaderLarge"
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+
+[node name="Mute_label" type="Label" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = ExtResource("7_tjkhc")
+theme_type_variation = &"HeaderLarge"
+text = "Mute"
+
+[node name="Mute" type="CheckBox" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+
+[node name="Res_label" type="Label" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("7_tjkhc")
+theme_type_variation = &"HeaderLarge"
+text = "Resolutions                             "
+
+[node name="Resolutions" type="OptionButton" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x700"
+popup/item_2/id = 2
+
+[node name="Window_label" type="Label" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = ExtResource("7_tjkhc")
+theme_type_variation = &"HeaderLarge"
+text = "Display Mode"
+
+[node name="Display_mode" type="OptionButton" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+
+[node name="Quit" type="Button" parent="pauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("7_tjkhc")
+text = " Quit "
+
+[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Back" to="pauseMenu" method="_on_back_pressed"]
+[connection signal="value_changed" from="pauseMenu/MarginContainer/VBoxContainer/Volume" to="pauseMenu" method="_on_volume_value_changed"]
+[connection signal="toggled" from="pauseMenu/MarginContainer/VBoxContainer/Mute" to="pauseMenu" method="_on_mute_toggled"]
+[connection signal="item_selected" from="pauseMenu/MarginContainer/VBoxContainer/Resolutions" to="pauseMenu" method="_on_resolutions_item_selected"]
+[connection signal="item_selected" from="pauseMenu/MarginContainer/VBoxContainer/Display_mode" to="pauseMenu" method="_on_display_mode_item_selected"]
+[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_back_pressed"]

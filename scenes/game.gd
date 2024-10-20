@@ -67,8 +67,3 @@ func reset_game():
 	# Reset the game to the start menu
 	print("Resetting game to start menu")
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
-
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().quit()
