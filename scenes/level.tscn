@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://v62t0swrewse" path="res://Platforms/Platform.tscn" id="8_hfpdr"]
 [ext_resource type="PackedScene" uid="uid://b4j6rh1l6op7p" path="res://Platforms/platform_2_false_ground.tscn" id="9_33k6c"]
 [ext_resource type="PackedScene" uid="uid://mm4uf5j5a734" path="res://scenes/kill_zone.tscn" id="9_jcmij"]
-[ext_resource type="PackedScene" uid="uid://cionmy7aktbuu" path="res://lamp.tscn" id="12_qrwyx"]
+[ext_resource type="PackedScene" uid="uid://cionmy7aktbuu" path="res://scenes/lamp.tscn" id="12_qrwyx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwyxw"]
 texture = ExtResource("1_kbf22")
@@ -2507,7 +2507,7 @@ marker1 = NodePath("../ghostPath/Marker2D4")
 marker2 = NodePath("../ghostPath/Marker2D3")
 
 [node name="player" parent="." instance=ExtResource("2_wgsws")]
-position = Vector2(142, 263)
+position = Vector2(184, 65)
 speed = 100
 
 [node name="bullets" type="Node2D" parent="."]

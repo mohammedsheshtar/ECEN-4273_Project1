@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://cionmy7aktbuu"]
 
-[ext_resource type="Script" path="res://lamp.gd" id="1_8jig1"]
+[ext_resource type="Script" path="res://scenes/lamp.gd" id="1_8jig1"]
 [ext_resource type="Texture2D" uid="uid://bf4euya3ysgdf" path="res://lamps/lantern4.png" id="1_nva0i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmnym"]
