@@ -8,6 +8,9 @@ signal shoot(pos: Vector2, dir: bool)
 var health := 100
 var vulnerable := true
 
+func _ready() -> void:
+	health = 100
+
 func _process(delta):
 	get_input()
 	apply_gravity()
