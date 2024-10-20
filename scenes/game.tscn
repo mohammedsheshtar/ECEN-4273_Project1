@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqh3upbq4gsgc"]
+[gd_scene load_steps=6 format=3 uid="uid://dqh3upbq4gsgc"]
 
 [ext_resource type="PackedScene" uid="uid://ca7l4lkcrg7yc" path="res://scenes/level.tscn" id="1_fht4q"]
 [ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="1_j18se"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_j33l5"]
 [ext_resource type="Texture2D" uid="uid://dtq8nusjn7abs" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="2_vdygy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0f37d"]
 
 [node name="game" type="Node"]
 script = ExtResource("1_j33l5")
@@ -17,12 +19,43 @@ offset_right = 1916.0
 offset_bottom = 1076.0
 color = Color(4.81308e-08, 0.221994, 0.224295, 1)
 
-[node name="Clouds" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+[node name="Clouds_Morning" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
+material = SubResource("ShaderMaterial_0f37d")
 position = Vector2(959, 540)
 scale = Vector2(7.5, 6.13636)
 texture = ExtResource("1_j18se")
 
-[node name="Town" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+[node name="Town_Morning" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
+position = Vector2(959, 540)
+scale = Vector2(7.5, 6.13637)
+texture = ExtResource("2_vdygy")
+
+[node name="Clouds_Afternoon" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
+modulate = Color(1, 1, 0, 1)
+position = Vector2(959, 540)
+scale = Vector2(7.5, 6.13636)
+texture = ExtResource("1_j18se")
+
+[node name="Town_Afternoon" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
+modulate = Color(1, 1, 0, 1)
+position = Vector2(959, 540)
+scale = Vector2(7.5, 6.13637)
+texture = ExtResource("2_vdygy")
+
+[node name="Clouds_Night" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
+modulate = Color(0.627451, 0.113725, 0.0784314, 1)
+position = Vector2(959, 540)
+scale = Vector2(7.5, 6.13636)
+texture = ExtResource("1_j18se")
+
+[node name="Town_Night" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+visible = false
+modulate = Color(0.627451, 0.113725, 0.0784314, 1)
 position = Vector2(959, 540)
 scale = Vector2(7.5, 6.13637)
 texture = ExtResource("2_vdygy")
