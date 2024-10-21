@@ -2480,7 +2480,7 @@ layer_0/tile_data = PackedInt32Array(1179652, 1703936, 4, 1179653, 1703936, 4, 1
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy1" parent="enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("3_7m5df")]
-position = Vector2(589, 235)
+position = Vector2(579, 235)
 marker1 = NodePath("../ghostPath/Marker2D")
 marker2 = NodePath("../ghostPath/Marker2D2")
 
@@ -2491,10 +2491,10 @@ scale = Vector2(1.4, 1.4)
 [node name="ghostPath" type="Node2D" parent="enemies"]
 
 [node name="Marker2D" type="Marker2D" parent="enemies/ghostPath"]
-position = Vector2(530, 236)
+position = Vector2(456, 234)
 
 [node name="Marker2D2" type="Marker2D" parent="enemies/ghostPath"]
-position = Vector2(634, 236)
+position = Vector2(656, 236)
 
 [node name="Marker2D3" type="Marker2D" parent="enemies/ghostPath"]
 position = Vector2(-94, 276)
