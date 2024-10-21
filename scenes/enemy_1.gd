@@ -1,6 +1,6 @@
 extends Area2D
 
-var health := 2
+var health := 3
 var animation := ''
 @export var marker1: Marker2D
 @export var marker2: Marker2D
@@ -8,7 +8,7 @@ var animation := ''
 @onready var target = marker1
 var forward := true
 @onready var player = get_tree().get_first_node_in_group('player')
-@export var notice_radius := 90
+@export var notice_radius := 100
 
 func _on_area_entered(area: Area2D) -> void:
 	health -= 1

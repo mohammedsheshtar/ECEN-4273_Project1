@@ -49,7 +49,7 @@ func _process(delta):
 	velocity.x = direction_x * speed
 	move_and_slide()
 
-# Handles player input
+# Handle player input
 func get_input():
 	if not alive:
 		return
@@ -70,16 +70,16 @@ func get_input():
 			2:  # Night form
 				velocity.y = -150
 
-# Applies gravity to the player
+# Applie gravity to the player
 func apply_gravity(delta):
 	velocity.y += 400 * delta
 
-# Determines the player's facing direction
+# Determine the player's facing direction
 func get_facing_direction():
 	if direction_x != 0:
 		facing_right = direction_x >= 0
 
-# Sets the player's animation based on state and form
+# Set the player's animation based on state and form
 func get_animation():
 	animation = 'idle'
 	if not is_on_floor():
@@ -91,7 +91,7 @@ func get_animation():
 	
 	update_current_sprite()
 
-# Updates the currently visible sprite based on form
+# Update the currently visible sprite based on form
 func update_current_sprite():
 	morning_sprite.visible = current_form == 0
 	afternoon_sprite.visible = current_form == 1
@@ -108,7 +108,7 @@ func update_current_sprite():
 			night_sprite.animation = animation
 			night_sprite.flip_h = not facing_right
 
-# Sets the form and adjusts properties accordingly
+# Set the form and adjusts properties accordingly
 func set_form(form_index):
 	current_form = form_index
 
@@ -136,7 +136,7 @@ func set_form(form_index):
 			night_collision.disabled = false
 			speed = 150 # Night speed
 
-# Sets up a timer to change forms every 30 seconds
+# Set up a timer to change forms every 30 seconds
 func setup_form_timer():
 	form_timer.wait_time = 30.0
 	form_timer.one_shot = false
@@ -144,7 +144,7 @@ func setup_form_timer():
 	add_child(form_timer)
 	form_timer.start()
 
-# Changes the form when the timer times out
+# Change the form when the timer times out
 func _on_form_timer_timeout():
 	current_form += 1
 	if current_form >= 3:
@@ -152,16 +152,16 @@ func _on_form_timer_timeout():
 	else:
 		set_form(current_form)
 
-# Ends the game and returns to the start menu
+# End the game and returns to the start menu
 func end_game():
 	print("Ending game - returning to start menu")
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
 
-# Handles cooldown for shooting
+# Handle cooldown for shooting
 func _on_cooldown_timer_timeout() -> void:
 	can_shoot = true
 
-# Handles player taking damage and sets the damage effect on the correct sprite
+# Handle player taking damage and sets the damage effect on the correct sprite
 func get_damage(amount):
 	if vulnerable:
 		health -= amount
@@ -185,16 +185,16 @@ func get_damage(amount):
 		vulnerable = false
 		$timers/invincibility.start() 
 
-# Resets vulnerability after the invincibility timer times out
+# Reset vulnerability after the invincibility timer times out
 func _on_invincibility_timeout() -> void:
 	vulnerable = true
 
-# Checks player's health and triggers death if health reaches zero
+# Check player's health and triggers death if health reaches zero
 func check_health():
 	if health <= 0:
 		die()
 
-# Handles player death
+# Handle player death
 func die():
 	alive = false
 	print("Player has died")
@@ -202,12 +202,12 @@ func die():
 	set_animation_to_death()
 	end_game()
 
-# Sets the death animation
+# Set the death animation
 func set_animation_to_death():
 	animation = 'death'
 	death = true
 
-# Sets player health to zero
+# Set player health to zero
 func set_health_zero():
 	health = 0
 	alive = false
