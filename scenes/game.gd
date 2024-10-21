@@ -66,4 +66,4 @@ func set_background(form_index):
 func reset_game():
 	# Reset the game to the start menu
 	print("Resetting game to start menu")
-	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")

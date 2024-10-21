@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5mey77tijlvw"]
+[gd_scene load_steps=9 format=3 uid="uid://c5mey77tijlvw"]
 
 [ext_resource type="Texture2D" uid="uid://hnanwjok3aoc" path="res://assets/graphics/level/Death1.png" id="1_pqik2"]
 [ext_resource type="Texture2D" uid="uid://d4kfdpwlr8y5x" path="res://assets/AnimationSheet_Character.png" id="1_u5uxk"]
@@ -15,37 +15,35 @@ func _ready() -> void:
 	
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpiyp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gmh2"]
 atlas = ExtResource("1_u5uxk")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(160, 224, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o0hec"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfa2b"]
 atlas = ExtResource("1_u5uxk")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(192, 224, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_royun"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e4ro"]
 atlas = ExtResource("1_u5uxk")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5lvg7"]
-atlas = ExtResource("1_u5uxk")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(224, 224, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67t63"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bpiyp")
+"texture": SubResource("AtlasTexture_1gmh2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o0hec")
+"texture": SubResource("AtlasTexture_sfa2b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_royun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5lvg7")
+"texture": SubResource("AtlasTexture_1e4ro")
 }],
+"loop": true,
+"name": &"ded",
+"speed": 5.0
+}, {
+"frames": [],
 "loop": true,
 "name": &"default",
 "speed": 4.0
@@ -82,8 +80,8 @@ horizontal_alignment = 1
 position = Vector2(971, 763)
 scale = Vector2(7, 6.783)
 sprite_frames = SubResource("SpriteFrames_67t63")
-autoplay = "default"
-frame_progress = 0.0199379
+animation = &"ded"
+autoplay = "ded"
 flip_h = true
 
 [node name="Label" type="Label" parent="."]

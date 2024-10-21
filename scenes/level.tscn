@@ -2528,7 +2528,7 @@ marker2 = NodePath("../ghostPath/Marker2D5")
 position = Vector2(256, 246)
 
 [node name="player" parent="." instance=ExtResource("2_wgsws")]
-position = Vector2(192, 272)
+position = Vector2(136, 272)
 speed = 100
 
 [node name="bullets" type="Node2D" parent="."]
