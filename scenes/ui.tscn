@@ -20,9 +20,9 @@ offset_left = 44.0
 offset_top = 111.0
 offset_right = 44.0
 offset_bottom = 111.0
+grow_vertical = 0
 size_flags_horizontal = 0
 theme_override_constants/margin_bottom = 10
-metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
 custom_minimum_size = Vector2(300, 30)
@@ -33,9 +33,10 @@ value = 100.0
 show_percentage = false
 
 [node name="TimerLabel" type="Label" parent="."]
-offset_left = 1574.0
-offset_top = 63.0
-offset_right = 1796.0
-offset_bottom = 193.0
+offset_left = 78.0
+offset_top = 124.0
+offset_right = 300.0
+offset_bottom = 254.0
 theme_override_font_sizes/font_size = 60
-horizontal_alignment = 2
+text = "d"
+horizontal_alignment = 1

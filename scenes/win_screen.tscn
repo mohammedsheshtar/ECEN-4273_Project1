@@ -300,3 +300,22 @@ scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_n6aqb")
 autoplay = "default"
 frame_progress = 0.0684625
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 1074.0
+theme_override_font_sizes/font_size = 30
+text = "assets thanks to:
+itch.io @MonoPixelArt
+itch.io @Cainos
+itch.io @Penzilla
+itch.io @Mirquiso
+itch.io @Ansimuz"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1304.0
+offset_top = 30.0
+offset_right = 1900.0
+offset_bottom = 1059.0

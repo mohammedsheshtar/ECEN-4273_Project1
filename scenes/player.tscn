@@ -779,12 +779,12 @@ autoplay = "idle"
 
 [node name="AnimatedSprite2D_Night" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_t76dd")
-position = Vector2(0.7, -9.35)
+position = Vector2(7.52316e-37, -6)
 scale = Vector2(0.102734, 0.154883)
 sprite_frames = SubResource("SpriteFrames_lmhld")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.746065
+frame_progress = 0.88145
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)

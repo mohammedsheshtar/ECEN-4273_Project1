@@ -1,13 +1,13 @@
 extends CanvasLayer
 
 @onready var player = get_tree().get_first_node_in_group('player')
-@onready var timer_label = $TimerLabel
+@onready var timer_label = $TimerLabel  # Reference the label directly from CanvasLayer
 
-var time_left := 90.0
+var time_left := 90.0  # Use a float for precision
 
 func _ready():
-	set_process(true)
-	
+	set_process(true)  # Enable processing
+
 func _process(delta):
 	$MarginContainer/ProgressBar.value = player.health
 	update_timer(delta)

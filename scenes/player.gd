@@ -198,7 +198,7 @@ func check_health():
 func die():
 	alive = false
 	print("Player has died")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	set_animation_to_death()
 	end_game()
 

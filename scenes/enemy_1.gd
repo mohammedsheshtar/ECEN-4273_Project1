@@ -4,7 +4,7 @@ var health := 2
 var animation := ''
 @export var marker1: Marker2D
 @export var marker2: Marker2D
-@export var speed = 65
+@export var speed = 60
 @onready var target = marker1
 var forward := true
 @onready var player = get_tree().get_first_node_in_group('player')
@@ -36,7 +36,7 @@ func get_target():
 func _process(delta):
 	check_death()
 	get_animation()
-	if health > 1:
+	if health > 0:
 		get_target()
 	position += (target.position - position).normalized() * 70 * delta
 	flip_logic()
