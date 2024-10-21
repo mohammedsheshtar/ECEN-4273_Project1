@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5mey77tijlvw"]
+
+[ext_resource type="Texture2D" uid="uid://hnanwjok3aoc" path="res://assets/graphics/level/Death1.png" id="1_pqik2"]
+[ext_resource type="Texture2D" uid="uid://d4kfdpwlr8y5x" path="res://assets/AnimationSheet_Character.png" id="1_u5uxk"]
+[ext_resource type="Texture2D" uid="uid://b4vfeveck7i45" path="res://assets/graphics/level/Death2.png" id="2_xkopa"]
+
+[sub_resource type="GDScript" id="GDScript_hrsyd"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	await get_tree().create_timer(4).timeout
+	get_tree().change_scene_to_file(\"res://Menus/start_menu.tscn\")
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpiyp"]
+atlas = ExtResource("1_u5uxk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0hec"]
+atlas = ExtResource("1_u5uxk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_royun"]
+atlas = ExtResource("1_u5uxk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lvg7"]
+atlas = ExtResource("1_u5uxk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67t63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpiyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0hec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_royun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lvg7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Death_screen" type="Node2D"]
+script = SubResource("GDScript_hrsyd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1919.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(959.5, 540)
+scale = Vector2(2.4987, 2.59615)
+texture = ExtResource("1_pqik2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(960, 540)
+scale = Vector2(2.5, 2.59615)
+texture = ExtResource("2_xkopa")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 617.0
+offset_top = 79.0
+offset_right = 1469.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 60
+text = "The sun sets on your failure..."
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(971, 763)
+scale = Vector2(7, 6.783)
+sprite_frames = SubResource("SpriteFrames_67t63")
+autoplay = "default"
+frame_progress = 0.0199379
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 1074.0
+theme_override_font_sizes/font_size = 30
+text = "assets thanks to:
+itch.io @MonoPixelArt
+itch.io @Cainos
+itch.io @Penzilla
+itch.io @Mirquiso
+itch.io @Ansimuz"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1304.0
+offset_top = 30.0
+offset_right = 1900.0
+offset_bottom = 1059.0

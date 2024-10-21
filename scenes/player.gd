@@ -155,7 +155,7 @@ func _on_form_timer_timeout():
 # End the game and returns to the start menu
 func end_game():
 	print("Ending game - returning to start menu")
-	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 # Handle cooldown for shooting
 func _on_cooldown_timer_timeout() -> void:
