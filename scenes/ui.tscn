@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbxhp5r5ql5ty"]
+[gd_scene load_steps=4 format=3 uid="uid://dbxhp5r5ql5ty"]
 
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_6ps0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkhqh"]
+bg_color = Color(0.000240319, 3.39788e-06, 1.17507e-11, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0fo8"]
+bg_color = Color(1, 0.0196078, 0.258824, 0.890196)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_6ps0w")
@@ -21,5 +27,15 @@ metadata/_edit_use_anchors_ = true
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_qkhqh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v0fo8")
 value = 100.0
 show_percentage = false
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 1574.0
+offset_top = 63.0
+offset_right = 1796.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 2
