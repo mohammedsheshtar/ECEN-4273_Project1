@@ -125,6 +125,11 @@ region = Rect2(256, 0, 64, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m5mgr"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dwev1")
@@ -247,7 +252,7 @@ script = ExtResource("1_6qn7r")
 material = SubResource("ShaderMaterial_bcbyi")
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_m5mgr")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

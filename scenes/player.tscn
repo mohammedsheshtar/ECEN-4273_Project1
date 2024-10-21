@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cixeh0x5egmvm"]
+[gd_scene load_steps=38 format=3 uid="uid://cixeh0x5egmvm"]
 
 [ext_resource type="Texture2D" uid="uid://dp756ae4bc7a7" path="res://Stuff/oak_woods_v1.0/character/AnimationSheet_Character.png" id="1_jikxl"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_twugs"]
@@ -86,6 +86,18 @@ region = Rect2(192, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e2vo"]
 atlas = ExtResource("1_jikxl")
 region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1ba7"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddv87"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbik"]
+atlas = ExtResource("3_e84hi")
+region = Rect2(160, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjqbp"]
 atlas = ExtResource("1_jikxl")
@@ -192,6 +204,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_m1ba7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddv87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdbik")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yjqbp")
 }, {
 "duration": 1.0,
@@ -232,9 +258,8 @@ script = ExtResource("1_twugs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_aqmuf")
 sprite_frames = SubResource("SpriteFrames_5udme")
-animation = &"death"
+animation = &"stand"
 autoplay = "idle"
-frame_progress = 0.483415
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)

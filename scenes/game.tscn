@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqh3upbq4gsgc"]
+[gd_scene load_steps=10 format=3 uid="uid://dqh3upbq4gsgc"]
 
 [ext_resource type="PackedScene" uid="uid://ca7l4lkcrg7yc" path="res://scenes/level.tscn" id="1_fht4q"]
 [ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="1_j18se"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6i1ouyfu6a5x" path="res://Audio/background_music.tscn" id="6_ltwqx"]
 [ext_resource type="Theme" uid="uid://y4opfstsotdt" path="res://Menus/Start_theme.tres" id="7_tjkhc"]
 [ext_resource type="Script" path="res://scenes/pause_menu.gd" id="7_uh76v"]
+[ext_resource type="PackedScene" uid="uid://dbxhp5r5ql5ty" path="res://scenes/ui.tscn" id="8_y7bas"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0f37d"]
 
@@ -160,10 +161,12 @@ size_flags_vertical = 4
 theme = ExtResource("7_tjkhc")
 text = " Quit "
 
+[node name="UI" parent="." instance=ExtResource("8_y7bas")]
+
 [connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Back" to="pauseMenu" method="_on_back_pressed"]
 [connection signal="value_changed" from="pauseMenu/MarginContainer/VBoxContainer/Volume" to="pauseMenu" method="_on_volume_value_changed"]
 [connection signal="toggled" from="pauseMenu/MarginContainer/VBoxContainer/Mute" to="pauseMenu" method="_on_mute_toggled"]
 [connection signal="item_selected" from="pauseMenu/MarginContainer/VBoxContainer/Resolutions" to="pauseMenu" method="_on_resolutions_item_selected"]
 [connection signal="item_selected" from="pauseMenu/MarginContainer/VBoxContainer/Display_mode" to="pauseMenu" method="_on_display_mode_item_selected"]
-[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_quit_pressed"]
 [connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="pauseMenu/MarginContainer/VBoxContainer/Quit" to="pauseMenu" method="_on_quit_pressed"]

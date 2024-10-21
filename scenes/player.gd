@@ -5,14 +5,15 @@ var facing_right := true
 @export var speed := 150
 var can_shoot := true
 signal shoot(pos: Vector2, dir: bool)
-var health := 10
+var health := 100
 var vulnerable := true
 var animation = ''
 var death = false
 @onready var kill_zone = get_tree().get_first_node_in_group('Kill zone')
 var alive := true
 func _ready() -> void:
-	pass
+	animation = 'stand'
+	#await get_tree().create_timer(3).timeout
 
 func _process(delta):
 	if death == false:

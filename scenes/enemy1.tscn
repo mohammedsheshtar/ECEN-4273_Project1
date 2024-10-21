@@ -1,13 +1,42 @@
-[gd_scene load_steps=14 format=3 uid="uid://ceos3lx1hm6b3"]
+[gd_scene load_steps=22 format=3 uid="uid://ceos3lx1hm6b3"]
 
 [ext_resource type="Script" path="res://scenes/enemy_1.gd" id="1_12saq"]
 [ext_resource type="Texture2D" uid="uid://c1qpqq5xul364" path="res://Legacy Collection/Assets/Characters/Ghost-Files/Spritesheets/ghost-Idle.png" id="2_60qhd"]
 [ext_resource type="Shader" path="res://scenes/flickerShader.gdshader" id="2_aed6f"]
+[ext_resource type="Texture2D" uid="uid://w81n2aykl358" path="res://Legacy Collection/Assets/Characters/Ghost-Files/Spritesheets/ghost-Vanish.png" id="3_wwdya"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sqecc"]
 shader = ExtResource("2_aed6f")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/amount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46apb"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5wh0"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2s5w"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5hg8"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oko6q"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(256, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anxxr"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(320, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50t74"]
+atlas = ExtResource("3_wwdya")
+region = Rect2(384, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mexas"]
 atlas = ExtResource("2_60qhd")
@@ -41,6 +70,32 @@ region = Rect2(384, 6, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_46apb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5wh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2s5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5hg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oko6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anxxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50t74")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_mexas")
 }, {
 "duration": 1.0,
@@ -62,7 +117,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rmex6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -82,9 +137,8 @@ material = SubResource("ShaderMaterial_sqecc")
 position = Vector2(0, -3.57143)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_604qi")
-autoplay = "default"
-frame = 5
-frame_progress = 0.365188
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.714287, -0.714286)

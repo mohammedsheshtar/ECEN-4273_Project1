@@ -4,7 +4,7 @@ var health := 3
 var animation := ''
 @export var marker1: Marker2D
 @export var marker2: Marker2D
-@export var speed = 80
+@export var speed = 65
 @onready var target = marker1
 var forward := true
 @onready var player = get_tree().get_first_node_in_group('player')
@@ -35,7 +35,9 @@ func get_target():
 
 func _process(delta):
 	check_death()
-	get_target()
+	get_animation()
+	if health > 1:
+		get_target()
 	position += (target.position - position).normalized() * 70 * delta
 	flip_logic()
 
@@ -46,10 +48,17 @@ func flip_logic():
 
 func check_death():
 	if health <= 0:
+		await get_tree().create_timer(1).timeout
+		
 		queue_free()
 
 func get_animation():
-	pass
+	animation = 'idle'
+	if health <= 0:
+		animation = 'death'
+	else:
+		animation = 'idle'
+	$AnimatedSprite2D.animation = animation
 
 
 func _on_body_entered(body):

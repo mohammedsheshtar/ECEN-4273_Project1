@@ -5,6 +5,7 @@ var health := 4
 var direction_x := 1
 @export var speed := 50
 @onready var player = get_tree().get_first_node_in_group('player')
+var animation = ''
 func _on_area_entered(area: Area2D) -> void:
 	health -= 1
 	print('doggo was hit')
@@ -13,8 +14,8 @@ func _on_area_entered(area: Area2D) -> void:
 	#tween.tween_property(self, 'position', Vector2(100, 200), 1)
 	tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 1.0, 0.0)
 	tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.2)
-	if health < 1:
-		tween.tween_property(self, 'position', Vector2(100, 200), 1)
+	#if health < 1:
+	#	tween.tween_property(self, 'position', Vector2(100, 200), 1)
 		
 
 func _process(delta):
@@ -30,7 +31,7 @@ func adjust_speed():
 		else:
 			speed = 50
 func get_animation():
-	var animation = 'idle'
+	animation = 'idle'
 	if speed == 50:
 		animation = 'idle'
 	elif speed == 100:
@@ -40,7 +41,8 @@ func get_animation():
 	$AnimatedSprite2D.animation = animation
 func check_death():
 	if health <= 0:
-		await get_tree().create_timer(2).timeout
+		animation = 'death'
+		#await get_tree().create_timer(2).timeout
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:

@@ -291,7 +291,7 @@ position = Vector2(1099, 855)
 scale = Vector2(7, 6.783)
 sprite_frames = SubResource("SpriteFrames_67t63")
 autoplay = "default"
-frame_progress = 0.293682
+frame_progress = 0.0199379
 flip_h = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -299,4 +299,4 @@ position = Vector2(887, 588)
 scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_n6aqb")
 autoplay = "default"
-frame_progress = 0.547563
+frame_progress = 0.0684625
