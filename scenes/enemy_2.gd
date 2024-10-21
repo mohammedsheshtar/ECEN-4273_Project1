@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var health := 4
+var health := 3
 var direction_x := 1
 @export var speed := 50
 @onready var player = get_tree().get_first_node_in_group('player')

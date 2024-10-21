@@ -1,6 +1,6 @@
 extends Area2D
 
-var health := 3
+var health := 2
 var animation := ''
 @export var marker1: Marker2D
 @export var marker2: Marker2D
