@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://fwhj82gswv2q"]
+
+[ext_resource type="Script" path="res://Menus/options_menu.gd" id="1_3ibcl"]
+[ext_resource type="Texture2D" uid="uid://d108ey8nn8y1b" path="res://Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="2_rnpbp"]
+[ext_resource type="Theme" uid="uid://y4opfstsotdt" path="res://Menus/Start_theme.tres" id="3_r0agg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6671"]
+texture = ExtResource("2_rnpbp")
+
+[node name="controls_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ibcl")
+
+[node name="Clouds" type="Panel" parent="."]
+modulate = Color(0.791999, 0.791999, 0.791999, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q6671")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_r0agg")
+text = "Back"
+
+[node name="Controls" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_r0agg")
+theme_type_variation = &"HeaderLarge"
+text = "Left = Left Arrow Key
+Right = Right Arrow Key
+Jump = Spacebar
+Fire/Attack = C
+Options menu (in-game) = ESC"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

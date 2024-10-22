@@ -9,7 +9,7 @@ func _ready():
 	set_process(true)  # Enable processing
 
 func _process(delta):
-	$MarginContainer/ProgressBar.value = player.health
+	$MarginContainer/TextureProgressBar.value = player.health
 	update_timer(delta)
 
 func update_timer(delta):
